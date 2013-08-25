@@ -5,10 +5,14 @@ import Data.Char
 type Word = String
 
 sentence :: String -> [Word]
-sentence = undefined
+sentence [] = []
+sentence str =
+  let trimmedStr = dropWhile isSpace str
+      (w, str') = word trimmedStr
+  in w:sentence str'
 
 -- returns a word and the rest of input
 word :: String -> (Word, String)
-word = undefined
-                          
+word = span (not . isSpace)
+
 main = print $ sentence "Ceci n'est pas une phrase"
