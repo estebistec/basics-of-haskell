@@ -1,3 +1,12 @@
+-- Ex 1. The shape of a binary tree may be encoded using matching pairs of parentheses. The string of parentheses obtained this way matches the following grammar:
+
+-- Root  <- Par
+-- Expr  <- Par Par
+-- Par   <- '(' Expr ')'
+--        | '(' ')'
+
+-- Write a parser based on this grammar:
+
 data Token = TokLParen | TokRParen | TokEnd
     deriving (Show, Eq)
 
